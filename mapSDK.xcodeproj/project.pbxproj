@@ -10,10 +10,16 @@
 		0B22236E2766F3BA00B316AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B22236D2766F3BA00B316AC /* AppDelegate.swift */; };
 		0B2223702766F3BA00B316AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B22236F2766F3BA00B316AC /* SceneDelegate.swift */; };
 		0B2223722766F3BA00B316AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2223712766F3BA00B316AC /* ViewController.swift */; };
-		0B2223752766F3BA00B316AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B2223732766F3BA00B316AC /* Main.storyboard */; };
 		0B2223772766F3BC00B316AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B2223762766F3BC00B316AC /* Assets.xcassets */; };
 		0B22237A2766F3BC00B316AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B2223782766F3BC00B316AC /* LaunchScreen.storyboard */; };
 		487E78C312D851D96297A8D6 /* Pods_mapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3760F9A249F2581BF66D8B6 /* Pods_mapSDK.framework */; };
+		74652BD22790039800754946 /* LightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74652BD12790039800754946 /* LightViewController.swift */; };
+		74652BD4279003A600754946 /* PurposeChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74652BD3279003A600754946 /* PurposeChooseViewController.swift */; };
+		74652BD6279003B200754946 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74652BD5279003B200754946 /* FeedbackViewController.swift */; };
+		74652BDA2790041D00754946 /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 74652BD92790041D00754946 /* Main.storyboard */; };
+		74652BDC2790043A00754946 /* beer2.png in Resources */ = {isa = PBXBuildFile; fileRef = 74652BDB2790043A00754946 /* beer2.png */; };
+		74652BDE2790044000754946 /* light2.png in Resources */ = {isa = PBXBuildFile; fileRef = 74652BDD2790044000754946 /* light2.png */; };
+		74652BE02790044700754946 /* trade.png in Resources */ = {isa = PBXBuildFile; fileRef = 74652BDF2790044700754946 /* trade.png */; };
 		95100450278EAC8C007F73AA /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510044F278EAC8C007F73AA /* GetData.swift */; };
 		95100453278EAC9A007F73AA /* SetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95100452278EAC9A007F73AA /* SetData.swift */; };
 		95100456278EACA5007F73AA /* MapDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95100455278EACA5007F73AA /* MapDesign.swift */; };
@@ -26,10 +32,16 @@
 		0B22236D2766F3BA00B316AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B22236F2766F3BA00B316AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0B2223712766F3BA00B316AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0B2223742766F3BA00B316AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B2223762766F3BC00B316AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B2223792766F3BC00B316AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B22237B2766F3BC00B316AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74652BD12790039800754946 /* LightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightViewController.swift; sourceTree = "<group>"; };
+		74652BD3279003A600754946 /* PurposeChooseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurposeChooseViewController.swift; sourceTree = "<group>"; };
+		74652BD5279003B200754946 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		74652BD92790041D00754946 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		74652BDB2790043A00754946 /* beer2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beer2.png; sourceTree = "<group>"; };
+		74652BDD2790044000754946 /* light2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light2.png; sourceTree = "<group>"; };
+		74652BDF2790044700754946 /* trade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trade.png; sourceTree = "<group>"; };
 		8F23509E3232D466667BDD52 /* Pods-mapSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mapSDK.debug.xcconfig"; path = "Target Support Files/Pods-mapSDK/Pods-mapSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		9510044F278EAC8C007F73AA /* GetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetData.swift; path = mapSDK/GetData.swift; sourceTree = "<group>"; };
 		95100452278EAC9A007F73AA /* SetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SetData.swift; path = mapSDK/SetData.swift; sourceTree = "<group>"; };
@@ -78,11 +90,17 @@
 		0B22236C2766F3BA00B316AC /* mapSDK */ = {
 			isa = PBXGroup;
 			children = (
+				74652BD5279003B200754946 /* FeedbackViewController.swift */,
+				74652BD3279003A600754946 /* PurposeChooseViewController.swift */,
+				74652BD12790039800754946 /* LightViewController.swift */,
 				0B22236D2766F3BA00B316AC /* AppDelegate.swift */,
 				0B22236F2766F3BA00B316AC /* SceneDelegate.swift */,
 				0B2223712766F3BA00B316AC /* ViewController.swift */,
-				0B2223732766F3BA00B316AC /* Main.storyboard */,
+				74652BD92790041D00754946 /* Main.storyboard */,
 				0B2223762766F3BC00B316AC /* Assets.xcassets */,
+				74652BDB2790043A00754946 /* beer2.png */,
+				74652BDD2790044000754946 /* light2.png */,
+				74652BDF2790044700754946 /* trade.png */,
 				0B2223782766F3BC00B316AC /* LaunchScreen.storyboard */,
 				0B22237B2766F3BC00B316AC /* Info.plist */,
 			);
@@ -165,9 +183,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74652BDC2790043A00754946 /* beer2.png in Resources */,
+				74652BDE2790044000754946 /* light2.png in Resources */,
+				74652BE02790044700754946 /* trade.png in Resources */,
 				0B22237A2766F3BC00B316AC /* LaunchScreen.storyboard in Resources */,
 				0B2223772766F3BC00B316AC /* Assets.xcassets in Resources */,
-				0B2223752766F3BA00B316AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +240,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74652BDA2790041D00754946 /* Main.storyboard in Sources */,
+				74652BD6279003B200754946 /* FeedbackViewController.swift in Sources */,
+				74652BD4279003A600754946 /* PurposeChooseViewController.swift in Sources */,
+				74652BD22790039800754946 /* LightViewController.swift in Sources */,
 				95100459278EACAE007F73AA /* UIDesign.swift in Sources */,
 				9510045E278EAEA0007F73AA /* GetMyPosition.swift in Sources */,
 				95100456278EACA5007F73AA /* MapDesign.swift in Sources */,
@@ -234,14 +258,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0B2223732766F3BA00B316AC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0B2223742766F3BA00B316AC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0B2223782766F3BC00B316AC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -290,6 +306,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -304,7 +321,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -351,6 +368,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -359,7 +377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -377,7 +395,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = mapSDK/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -385,7 +403,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = k.mapSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -397,7 +415,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = mapSDK/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -405,7 +423,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = k.mapSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
