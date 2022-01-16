@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PurposeChooseViewController: UIViewController {
+class PurposeChooseViewController: ViewController {
     
     @IBOutlet var beerButton: UIButton!
     @IBOutlet var tradeButton: UIButton!
@@ -30,11 +30,16 @@ class PurposeChooseViewController: UIViewController {
         //ボタンに画像をセット
         beerButton.setImage(beerImage, for: .normal)
         tradeButton.setImage(tradeImage, for: .normal)
-
+        
+        self.view.addSubview(beerButton)
+        self.view.bringSubviewToFront(beerButton)
+        self.view.addSubview(tradeButton)
+        self.view.bringSubviewToFront(tradeButton)
     }
     
     //ビールボタンが押された時の処理
     @IBAction func Beer(){
+        self.markers_info.Reverse_marker(purpose: "beer")
         if ( beerSwitch ) {
             //ビールボタンが選択されていない場合
             print("false")
@@ -53,7 +58,7 @@ class PurposeChooseViewController: UIViewController {
     
     //交換ボタンが押された時の処理
     @IBAction func Trade(){
-        
+        self.markers_info.Reverse_marker(purpose: "trade")
         if ( tradeSwitch ) {
             //交換ボタンが選択されていない場合
             print("false")

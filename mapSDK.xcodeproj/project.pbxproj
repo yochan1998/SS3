@@ -16,7 +16,6 @@
 		74652BD22790039800754946 /* LightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74652BD12790039800754946 /* LightViewController.swift */; };
 		74652BD4279003A600754946 /* PurposeChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74652BD3279003A600754946 /* PurposeChooseViewController.swift */; };
 		74652BD6279003B200754946 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74652BD5279003B200754946 /* FeedbackViewController.swift */; };
-		74652BDA2790041D00754946 /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 74652BD92790041D00754946 /* Main.storyboard */; };
 		74652BDC2790043A00754946 /* beer2.png in Resources */ = {isa = PBXBuildFile; fileRef = 74652BDB2790043A00754946 /* beer2.png */; };
 		74652BDE2790044000754946 /* light2.png in Resources */ = {isa = PBXBuildFile; fileRef = 74652BDD2790044000754946 /* light2.png */; };
 		74652BE02790044700754946 /* trade.png in Resources */ = {isa = PBXBuildFile; fileRef = 74652BDF2790044700754946 /* trade.png */; };
@@ -25,6 +24,7 @@
 		95100456278EACA5007F73AA /* MapDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95100455278EACA5007F73AA /* MapDesign.swift */; };
 		95100459278EACAE007F73AA /* UIDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95100458278EACAE007F73AA /* UIDesign.swift */; };
 		9510045E278EAEA0007F73AA /* GetMyPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510045D278EAEA0007F73AA /* GetMyPosition.swift */; };
+		9510047227901AF4007F73AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74652BD92790041D00754946 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -183,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9510047227901AF4007F73AA /* Main.storyboard in Resources */,
 				74652BDC2790043A00754946 /* beer2.png in Resources */,
 				74652BDE2790044000754946 /* light2.png in Resources */,
 				74652BE02790044700754946 /* trade.png in Resources */,
@@ -240,7 +241,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74652BDA2790041D00754946 /* Main.storyboard in Sources */,
 				74652BD6279003B200754946 /* FeedbackViewController.swift in Sources */,
 				74652BD4279003A600754946 /* PurposeChooseViewController.swift in Sources */,
 				74652BD22790039800754946 /* LightViewController.swift in Sources */,
@@ -395,7 +395,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = mapSDK/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -415,7 +415,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = mapSDK/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

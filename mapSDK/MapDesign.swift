@@ -48,6 +48,17 @@ class Markers_info{
         UIGraphicsEndImageContext()
         return newImage
     }
+    func Reverse_marker(purpose: String){
+        // (目的名)のマーカーの表示,非表示を反転
+        let purpose_id = (self.purpose_dict[purpose] ?? -1)
+        if purpose_id != -1{
+            self.is_active_purpose[purpose_id] = !self.is_active_purpose[purpose_id]
+        }
+        else{
+            print("目的名が定義されていません")
+            assert(false)
+        }
+    }
     func Reload_marker(pin_circle_array: Array<Pin_circle_data>, my_id: Int){
         self.new_purpose_set.removeAll()
         for mk in self.markers{
@@ -112,8 +123,6 @@ class Markers_info{
             }
             self.markers[idx].set_marker(icon: icon, position: position, mapView: mapView)
         }
-        
-        
     }
 
 }
