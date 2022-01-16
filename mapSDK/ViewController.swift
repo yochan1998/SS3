@@ -5,6 +5,8 @@
 //  Created by k i on 2021/12/13.
 //
 
+// 2022/01/16 : storyboard上の目的選択ボタンをマップのマーカーに反映
+
 
 import UIKit
 import GoogleMaps

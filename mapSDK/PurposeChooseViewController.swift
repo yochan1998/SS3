@@ -5,8 +5,10 @@
 //  Created by 酒井のどか on 2022/01/09.
 //
 
+
 import UIKit
 
+//継承元をViewControllerに変更
 class PurposeChooseViewController: ViewController {
     
     @IBOutlet var beerButton: UIButton!
@@ -31,6 +33,7 @@ class PurposeChooseViewController: ViewController {
         beerButton.setImage(beerImage, for: .normal)
         tradeButton.setImage(tradeImage, for: .normal)
         
+        //ボタンを最前面に移動
         self.view.addSubview(beerButton)
         self.view.bringSubviewToFront(beerButton)
         self.view.addSubview(tradeButton)
@@ -39,7 +42,7 @@ class PurposeChooseViewController: ViewController {
     
     //ビールボタンが押された時の処理
     @IBAction func Beer(){
-        self.markers_info.Reverse_marker(purpose: "beer")
+        self.markers_info.Reverse_marker(purpose: "beer") //beerマーカーの表示,非表示を反転
         if ( beerSwitch ) {
             //ビールボタンが選択されていない場合
             print("false")
@@ -58,7 +61,7 @@ class PurposeChooseViewController: ViewController {
     
     //交換ボタンが押された時の処理
     @IBAction func Trade(){
-        self.markers_info.Reverse_marker(purpose: "trade")
+        self.markers_info.Reverse_marker(purpose: "trade") //tradeマーカーの表示,非表示を反転
         if ( tradeSwitch ) {
             //交換ボタンが選択されていない場合
             print("false")

@@ -50,6 +50,7 @@ class Markers_info{
     }
     func Reverse_marker(purpose: String){
         // (目的名)のマーカーの表示,非表示を反転
+        // PurposeChooseViewControllerで使用
         let purpose_id = (self.purpose_dict[purpose] ?? -1)
         if purpose_id != -1{
             self.is_active_purpose[purpose_id] = !self.is_active_purpose[purpose_id]

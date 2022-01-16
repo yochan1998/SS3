@@ -2,6 +2,7 @@
 import UIKit
 import AVFoundation
 
+//継承元をViewControllerに変更
 class LightViewController: ViewController {
     
     //選択された目的に合わせてピンを表示させ、同じ目的を持った他のユーザと近づいた場合合体
