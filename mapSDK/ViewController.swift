@@ -19,7 +19,6 @@ let TIME_INTERVAL = 0.2
 class ViewController: UIViewController, CLLocationManagerDelegate {    
     var t = 0.0 // アプリ起動時からの経過時間[s]
     var markers_info = Markers_info()
-    var buttons_info = Buttons_info()
     var input_info = GetData()
     var output_info = SetData()
     var my_info = MyPosition()
@@ -49,8 +48,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // 画面サイズの読み込み
-        WIDTH = Double(self.view.frame.width)
-        HEIGHT = Double(self.view.frame.height)
         //初期値はApple本社
         let camera = GMSCameraPosition.camera(withLatitude: my_info.CameraLat, longitude: my_info.CameraLng, zoom: 15.0)
         mapView = GMSMapView.map(withFrame: CGRect(origin: .zero, size: view.bounds.size), camera: camera)

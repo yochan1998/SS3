@@ -22,7 +22,6 @@
 		95100450278EAC8C007F73AA /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510044F278EAC8C007F73AA /* GetData.swift */; };
 		95100453278EAC9A007F73AA /* SetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95100452278EAC9A007F73AA /* SetData.swift */; };
 		95100456278EACA5007F73AA /* MapDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95100455278EACA5007F73AA /* MapDesign.swift */; };
-		95100459278EACAE007F73AA /* UIDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95100458278EACAE007F73AA /* UIDesign.swift */; };
 		9510045E278EAEA0007F73AA /* GetMyPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510045D278EAEA0007F73AA /* GetMyPosition.swift */; };
 		9510047227901AF4007F73AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74652BD92790041D00754946 /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -46,7 +45,6 @@
 		9510044F278EAC8C007F73AA /* GetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetData.swift; path = mapSDK/GetData.swift; sourceTree = "<group>"; };
 		95100452278EAC9A007F73AA /* SetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SetData.swift; path = mapSDK/SetData.swift; sourceTree = "<group>"; };
 		95100455278EACA5007F73AA /* MapDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapDesign.swift; path = mapSDK/MapDesign.swift; sourceTree = "<group>"; };
-		95100458278EACAE007F73AA /* UIDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIDesign.swift; path = mapSDK/UIDesign.swift; sourceTree = "<group>"; };
 		9510045D278EAEA0007F73AA /* GetMyPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetMyPosition.swift; path = mapSDK/GetMyPosition.swift; sourceTree = "<group>"; };
 		B95ABEF66444E71CC225C0D4 /* Pods-mapSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mapSDK.release.xcconfig"; path = "Target Support Files/Pods-mapSDK/Pods-mapSDK.release.xcconfig"; sourceTree = "<group>"; };
 		F3760F9A249F2581BF66D8B6 /* Pods_mapSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mapSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,7 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				9510045D278EAEA0007F73AA /* GetMyPosition.swift */,
-				95100458278EACAE007F73AA /* UIDesign.swift */,
 				95100455278EACA5007F73AA /* MapDesign.swift */,
 				95100452278EAC9A007F73AA /* SetData.swift */,
 				9510044F278EAC8C007F73AA /* GetData.swift */,
@@ -244,7 +241,6 @@
 				74652BD6279003B200754946 /* FeedbackViewController.swift in Sources */,
 				74652BD4279003A600754946 /* PurposeChooseViewController.swift in Sources */,
 				74652BD22790039800754946 /* LightViewController.swift in Sources */,
-				95100459278EACAE007F73AA /* UIDesign.swift in Sources */,
 				9510045E278EAEA0007F73AA /* GetMyPosition.swift in Sources */,
 				95100456278EACA5007F73AA /* MapDesign.swift in Sources */,
 				95100453278EAC9A007F73AA /* SetData.swift in Sources */,
