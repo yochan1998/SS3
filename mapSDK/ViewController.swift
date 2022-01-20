@@ -22,6 +22,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var input_info = GetData()
     var output_info = SetData()
     var my_info = MyPosition()
+    var locationManager = CLLocationManager()
+    var mapView: GMSMapView!
+    var centerLocationSwitch: Bool = true
     func loop_Foreground(){
         // フォアグラウンドで一定間隔で実行する処理
         // my_id : ユーザのID
@@ -40,6 +43,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         */
         output_info.Set_my_position(lat: my_info.MyLat, lng: my_info.MyLng, my_id: 0) // 位置情報の送信
+        
+        //カメラ座標変更(1度だけ)
+        if mLat != nil {
+            if centerLocationSwitch == true {
+                let camera = GMSCameraPosition.camera(withLatitude: my_info.CameraLat, longitude: my_info.CameraLng, zoom: 15.0)
+                self.mapView.animate(to: camera)
+                print(my_info.CameraLat,",",my_info.CameraLng)
+                centerLocationSwitch = false
+            }
+        }
     }
     
     // バックグラウンドで一定間隔で実行する処理
@@ -62,8 +75,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: my_info.MyLat, longitude: my_info.MyLng)
         marker.map = mapView
-        
-        let locationManager = CLLocationManager()
         // バックグラウンドでの位置情報更新を許可
         // locationManager.allowsBackgroundLocationUpdates = true
         
@@ -84,5 +95,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @objc func update_Foreground(tm: Timer) {
         //この関数を繰り返す、repeat this function
         loop_Foreground()
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        guard let newLocation = locations.last else {
+            return
+        }
+
+        let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(newLocation.coordinate.latitude, newLocation.coordinate.longitude)
+        
+        mLat = location.latitude
+        mLng = location.longitude
     }
 }
