@@ -23,12 +23,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var output_info = SetData()
     var my_info = MyPosition()
     var locationManager = CLLocationManager()
-    var mapView: GMSMapView!
+    //var mapView: GMSMapView!
     var centerLocationSwitch: Bool = true
     func loop_Foreground(){
         // フォアグラウンドで一定間隔で実行する処理
         // my_id : ユーザのID
-        let pin_circle_array = input_info.Get_pin_circle_data() // ピン,丸情報の受信
+        let pin_circle_array = input_info.Get_pin_circle_data(my_info: my_info) // ピン,丸情報の受信
         my_info.Reload_Position() // 位置情報の更新
         markers_info.Reload_marker(pin_circle_array: pin_circle_array, my_id: 0) // 画面表示
         /*
@@ -48,7 +48,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if mLat != nil {
             if centerLocationSwitch == true {
                 let camera = GMSCameraPosition.camera(withLatitude: my_info.CameraLat, longitude: my_info.CameraLng, zoom: 15.0)
-                self.mapView.animate(to: camera)
+                mapView.animate(to: camera)
                 print(my_info.CameraLat,",",my_info.CameraLng)
                 centerLocationSwitch = false
             }
