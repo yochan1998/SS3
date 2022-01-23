@@ -28,7 +28,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func loop_Foreground(){
         // フォアグラウンドで一定間隔で実行する処理
         // my_id : ユーザのID
-        let pin_circle_array = input_info.Get_pin_circle_data(my_info: my_info) // ピン,丸情報の受信
+        let pin_circle_array = input_info.Get_pin_circle_data(my_info: my_info, t: t) // ピン,丸情報の受信
         my_info.Reload_Position() // 位置情報の更新
         markers_info.Reload_marker(pin_circle_array: pin_circle_array, my_id: 0) // 画面表示
         /*
@@ -47,12 +47,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         //カメラ座標変更(1度だけ)
         if mLat != nil {
             if centerLocationSwitch == true {
-                let camera = GMSCameraPosition.camera(withLatitude: my_info.CameraLat, longitude: my_info.CameraLng, zoom: 15.0)
+                let camera = GMSCameraPosition.camera(withLatitude: my_info.CameraLat, longitude: my_info.CameraLng, zoom: 18.0)
                 mapView.animate(to: camera)
                 print(my_info.CameraLat,",",my_info.CameraLng)
                 centerLocationSwitch = false
             }
         }
+        t += TIME_INTERVAL
     }
     
     // バックグラウンドで一定間隔で実行する処理
@@ -62,7 +63,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         // 画面サイズの読み込み
         //初期値はApple本社
-        let camera = GMSCameraPosition.camera(withLatitude: my_info.CameraLat, longitude: my_info.CameraLng, zoom: 15.0)
+        let camera = GMSCameraPosition.camera(withLatitude: my_info.CameraLat, longitude: my_info.CameraLng, zoom: 18.0)
         mapView = GMSMapView.map(withFrame: CGRect(origin: .zero, size: view.bounds.size), camera: camera)
         mapView.settings.myLocationButton = true //右下のボタン追加する
         mapView.isMyLocationEnabled = true
