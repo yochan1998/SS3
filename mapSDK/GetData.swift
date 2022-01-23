@@ -9,7 +9,7 @@
 // TIME_INTERVAL[s]ごとに呼び出される
 //    周辺のピン,丸情報を取得する
 
-// ルートを変更する場合80~88行目を編集してください
+// ルートや設定を変更する場合80~89行目を編集してください
 
 import Foundation
 
@@ -85,7 +85,8 @@ class GetData {
                  [[35.602818, 139.683484], [35.602764, 139.683992]],
                  [[35.602719, 139.684369], [35.602764, 139.683992]]]
     let Purpose_array = ["beer", "beer", "trade", "trade", "trade", "trade"]
-    let Unite_dist = 20.0 // ピンの結合距離
+    let Unite_dist = 20.0 // ピンの結合距離[m]
+    let START_TIME = 5.0 // シミュレーション開始時刻[s]
     // -----
     
     func Randlat() ->Double{
@@ -110,7 +111,7 @@ class GetData {
         let M = Path[id].count
         var i = 0
         var dist_tmp = 0.0
-        let t1 = max(t-5.0, 0.0)
+        let t1 = max(t-START_TIME, 0.0)
         let dist = t1 * 80.0 / 60.0
         while(true){
             if(i >= M-1){

@@ -36,6 +36,7 @@ class Markers_info{
     var purpose_size = 0
     var is_active_purpose: Array<Bool> = []
     var new_purpose_set: Set<String> = []
+    let PIN_SIZE = 40.0
     func user_id_to_purpose_id(idx: Int) -> Int {
         let purpose_id = (self.purpose_dict[self.markers[idx].purpose] ?? -1)
         return purpose_id
@@ -75,7 +76,12 @@ class Markers_info{
             }
             var type = input.type
             if input.user_id.contains(my_id){
-                type = "me"
+                if input.type == "pin"{
+                    type = "mypin"
+                }
+                else{
+                    type = "mycircle"
+                }
             }
             self.markers.append(Marker_info(lat: input.lat, lng: input.lng, count: input.count, purpose: input.purpose, type: type, user_id: input.user_id))
         }
@@ -88,8 +94,8 @@ class Markers_info{
                 continue
             }
             var icon = GMSMarker.markerImage(with: .black)
-            if input.type == "pin"{
-                let size_w = 20.0
+            if self.markers[idx].type == "pin"{
+                let size_w = PIN_SIZE
                 let size_h = size_w * 605.0 / 420.0
                 switch purpose_id {
                 case 0:
@@ -102,8 +108,8 @@ class Markers_info{
                     icon = imageWithImage(image: UIImage(named: "d")!, scaledToSize: CGSize(width: size_w, height: size_h))
                 }
             }
-            else if input.type == "circle"{
-                let size = 20.0 * sqrt(Double(input.count))
+            else if self.markers[idx].type == "circle"{
+                let size = PIN_SIZE * sqrt(Double(input.count))
                 switch purpose_id {
                 case 0:
                     icon = imageWithImage(image: UIImage(named: "0")!, scaledToSize: CGSize(width: size, height: size))
@@ -115,9 +121,34 @@ class Markers_info{
                     icon = imageWithImage(image: UIImage(named: "3")!, scaledToSize: CGSize(width: size, height: size))
                 }
             }
-            else if input.type == "me"{
+            else if self.markers[idx].type == "mypin"{
                 // DBの送信してDBから取得した情報 : ラグがあるので良くない
-                icon = GMSMarker.markerImage(with: .red)
+                let size_w = PIN_SIZE
+                let size_h = size_w * 605.0 / 420.0
+                switch purpose_id {
+                case 0:
+                    icon = imageWithImage(image: UIImage(named: "as")!, scaledToSize: CGSize(width: size_w, height: size_h))
+                case 1:
+                    icon = imageWithImage(image: UIImage(named: "bs")!, scaledToSize: CGSize(width: size_w, height: size_h))
+                case 2:
+                    icon = imageWithImage(image: UIImage(named: "cs")!, scaledToSize: CGSize(width: size_w, height: size_h))
+                default:
+                    icon = imageWithImage(image: UIImage(named: "ds")!, scaledToSize: CGSize(width: size_w, height: size_h))
+                }
+            }
+            else if self.markers[idx].type == "mycircle"{
+                // DBの送信してDBから取得した情報 : ラグがあるので良くない
+                let size = PIN_SIZE * sqrt(Double(input.count))
+                switch purpose_id {
+                case 0:
+                    icon = imageWithImage(image: UIImage(named: "0s")!, scaledToSize: CGSize(width: size, height: size))
+                case 1:
+                    icon = imageWithImage(image: UIImage(named: "1s")!, scaledToSize: CGSize(width: size, height: size))
+                case 2:
+                    icon = imageWithImage(image: UIImage(named: "2s")!, scaledToSize: CGSize(width: size, height: size))
+                default:
+                    icon = imageWithImage(image: UIImage(named: "3s")!, scaledToSize: CGSize(width: size, height: size))
+                }
             }
             else{
                 assert(false)

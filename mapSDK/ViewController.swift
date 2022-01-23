@@ -15,6 +15,7 @@ import GooglePlaces
 var timer_Foreground: Timer!
 var timer_Background: Timer!
 let TIME_INTERVAL = 0.2
+let MY_ID = 2
 
 class ViewController: UIViewController, CLLocationManagerDelegate {    
     var t = 0.0 // アプリ起動時からの経過時間[s]
@@ -30,7 +31,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // my_id : ユーザのID
         let pin_circle_array = input_info.Get_pin_circle_data(my_info: my_info, t: t) // ピン,丸情報の受信
         my_info.Reload_Position() // 位置情報の更新
-        markers_info.Reload_marker(pin_circle_array: pin_circle_array, my_id: 0) // 画面表示
+        markers_info.Reload_marker(pin_circle_array: pin_circle_array, my_id: MY_ID) // 画面表示
         /*
         for purpose in markers_info.new_purpose_set{
             // 新規の目的があれば画面のボタンを追加
@@ -73,9 +74,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
           print("User's location is unknown")
         }
         
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: my_info.MyLat, longitude: my_info.MyLng)
-        marker.map = mapView
+        //let marker = GMSMarker()
+        //marker.position = CLLocationCoordinate2D(latitude: my_info.MyLat, longitude: my_info.MyLng)
+        //marker.map = mapView
         // バックグラウンドでの位置情報更新を許可
         // locationManager.allowsBackgroundLocationUpdates = true
         
