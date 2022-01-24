@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JQ2-ZW-qaq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JQ2-ZW-qaq">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,19 +17,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0p-J4-7XL">
-                                <rect key="frame" x="305" y="721" width="65" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJR-pi-s7z">
+                                <rect key="frame" x="230" y="725" width="174" height="85"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="174" id="zIW-nr-Kt3"/>
+                                    <constraint firstAttribute="height" constant="85" id="zYz-xP-eat"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0p-J4-7XL">
+                                <rect key="frame" x="329" y="733" width="65" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="5Kb-uL-Taf"/>
+                                    <constraint firstAttribute="height" constant="69" id="v8I-5N-9wQ"/>
+                                </constraints>
                                 <color key="tintColor" systemColor="systemTealColor"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="Trade" destination="BYZ-38-t0r" eventType="touchUpInside" id="g0a-tj-dvT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caM-OD-xlb">
-                                <rect key="frame" x="212" y="721" width="69" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caM-OD-xlb">
+                                <rect key="frame" x="240" y="733" width="69" height="69"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="H4I-aB-vdb"/>
+                                    <constraint firstAttribute="width" constant="69" id="ciA-cs-hqq"/>
+                                </constraints>
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -39,6 +54,14 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="caM-OD-xlb" secondAttribute="bottom" constant="60" id="4lQ-eF-F0Y"/>
+                            <constraint firstItem="caM-OD-xlb" firstAttribute="centerY" secondItem="SJR-pi-s7z" secondAttribute="centerY" id="Fa3-8T-UcI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SJR-pi-s7z" secondAttribute="trailing" constant="10" id="hkr-Qs-KcB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S0p-J4-7XL" secondAttribute="trailing" constant="20" id="pZ1-kP-YXg"/>
+                            <constraint firstItem="S0p-J4-7XL" firstAttribute="leading" secondItem="caM-OD-xlb" secondAttribute="trailing" constant="20" id="rw2-jM-D8q"/>
+                            <constraint firstItem="S0p-J4-7XL" firstAttribute="centerY" secondItem="caM-OD-xlb" secondAttribute="centerY" id="xzd-hY-xJZ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9Xu-Lt-aMe">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="h9w-qg-Z9O">
@@ -49,6 +72,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="beerButton" destination="caM-OD-xlb" id="GsJ-Kx-MfG"/>
+                        <outlet property="buttonView" destination="SJR-pi-s7z" id="3Ir-XE-nix"/>
                         <outlet property="tradeButton" destination="S0p-J4-7XL" id="ihx-XM-atH"/>
                         <segue destination="ORU-Id-3rg" kind="show" identifier="startSearch" id="fAi-hc-5mO"/>
                     </connections>
@@ -65,10 +89,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9T-VS-GD1">
-                                <rect key="frame" x="294" y="719" width="100" height="93"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9T-VS-GD1">
+                                <rect key="frame" x="294" y="712" width="100" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="biu-I0-CPo"/>
+                                    <constraint firstAttribute="width" constant="100" id="vuw-Yn-jDZ"/>
+                                </constraints>
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -78,6 +105,10 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0C5-Rf-1Qj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0C5-Rf-1Qj" firstAttribute="bottom" secondItem="T9T-VS-GD1" secondAttribute="bottom" constant="50" id="c1P-QF-ysw"/>
+                            <constraint firstItem="0C5-Rf-1Qj" firstAttribute="trailing" secondItem="T9T-VS-GD1" secondAttribute="trailing" constant="20" id="yF1-H3-Z9p"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oh2-EU-Yzk"/>
                     <connections>
@@ -97,10 +128,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8g9-gq-Xfc">
-                                <rect key="frame" x="55" y="480" width="304" height="132"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8g9-gq-Xfc">
+                                <rect key="frame" x="55" y="479" width="304" height="131"/>
                                 <color key="backgroundColor" red="0.76470589639999997" green="0.90588235859999999" blue="0.90588235859999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="304" id="7uK-Vr-er9"/>
+                                    <constraint firstAttribute="height" constant="131" id="lp6-dI-gsU"/>
+                                </constraints>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="出会えなかった"/>
                                 <userDefinedRuntimeAttributes>
@@ -112,10 +146,13 @@
                                     <action selector="failMatching" destination="vXB-vK-PKh" eventType="touchUpInside" id="0No-Nf-dit"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svA-Jj-cp4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svA-Jj-cp4">
                                 <rect key="frame" x="55" y="293" width="304" height="131"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.96470588450000005" green="0.78823530669999997" blue="0.5176470876" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="304" id="A6P-TN-Cfv"/>
+                                    <constraint firstAttribute="height" constant="131" id="mC7-GI-qyr"/>
+                                </constraints>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="出会えた"/>
                                 <userDefinedRuntimeAttributes>
@@ -129,7 +166,13 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8HY-WH-f2z"/>
-                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <color key="backgroundColor" white="0.94770408163265307" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8g9-gq-Xfc" firstAttribute="top" secondItem="svA-Jj-cp4" secondAttribute="bottom" constant="55" id="WPb-wC-V01"/>
+                            <constraint firstItem="svA-Jj-cp4" firstAttribute="centerY" secondItem="Wat-dV-QRh" secondAttribute="centerY" constant="-89.5" id="cji-x4-Pjf"/>
+                            <constraint firstItem="8g9-gq-Xfc" firstAttribute="centerX" secondItem="Wat-dV-QRh" secondAttribute="centerX" id="liu-Bb-b8u"/>
+                            <constraint firstItem="svA-Jj-cp4" firstAttribute="centerX" secondItem="Wat-dV-QRh" secondAttribute="centerX" id="t0a-N5-Xps"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TUX-Pe-cPu"/>
                 </viewController>
@@ -159,9 +202,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
