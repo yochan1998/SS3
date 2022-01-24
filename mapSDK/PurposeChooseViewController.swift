@@ -13,6 +13,7 @@ class PurposeChooseViewController: ViewController {
     
     @IBOutlet var beerButton: UIButton!
     @IBOutlet var tradeButton: UIButton!
+    @IBOutlet var buttonView: UIView!
     let beerImage = UIImage(named: "beer2.png")
     let tradeImage = UIImage(named: "trade.png")
     let lightImage = UIImage(named: "light.png")
@@ -32,6 +33,10 @@ class PurposeChooseViewController: ViewController {
         //ボタンに画像をセット
         beerButton.setImage(beerImage, for: .normal)
         tradeButton.setImage(tradeImage, for: .normal)
+        
+        //viewを最前面に移動
+        self.view.addSubview(buttonView)
+        self.view.bringSubviewToFront(buttonView)
         
         //ボタンを最前面に移動
         self.view.addSubview(beerButton)
