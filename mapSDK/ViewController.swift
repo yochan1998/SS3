@@ -29,7 +29,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func loop_Foreground(){
         // フォアグラウンドで一定間隔で実行する処理
         // my_id : ユーザのID
-        let pin_circle_array = input_info.Get_pin_circle_data(my_info: my_info, t: t) // ピン,丸情報の受信
+        let pin_circle_array = input_info.Get_pin_circle_data(my_info: my_info, t: t, my_id: MY_ID) // ピン,丸情報の受信
         my_info.Reload_Position() // 位置情報の更新
         markers_info.Reload_marker(pin_circle_array: pin_circle_array, my_id: MY_ID) // 画面表示
         /*

@@ -106,8 +106,12 @@ class GetData {
         let d = 2.0 * R * asin(sqrt(sin(difflat/2.0)*sin(difflat/2.0) + cos(rlat1)*cos(rlat2)*sin(difflon/2.0)*sin(difflon/2.0)))
         return d
     }
-    func Pos_simulate(t: Double, id: Int) ->Array<Double>{
-        var latlng: Array<Double> = [0.0, 0.0]
+    func Pos_simulate(t: Double, id: Int, my_id: Int, my_lat: Double, my_lng: Double) ->Array<Double>{
+        var latlng = [0.0, 0.0]
+        if id == my_id{
+            latlng = [my_lat, my_lng]
+            return latlng
+        }
         let M = Path[id].count
         var i = 0
         var dist_tmp = 0.0
@@ -182,7 +186,7 @@ class GetData {
         return pin_circle_array_new
     }
 
-    func Get_pin_circle_data(my_info : MyPosition, t: Double) -> Array<Pin_circle_data>{
+    func Get_pin_circle_data(my_info : MyPosition, t: Double, my_id: Int) -> Array<Pin_circle_data>{
         // サンプルコード
         let my_lat = my_info.MyLat
         let my_lng = my_info.MyLng
@@ -190,7 +194,7 @@ class GetData {
         // my_lat, my_lng周辺の情報に限定する？
         var pin_circle_array: Array<Pin_circle_data> = []
         for id in 0..<N{
-            let latlng = Pos_simulate(t: t, id: id)
+            let latlng = Pos_simulate(t: t, id: id, my_id: my_id, my_lat: my_lat, my_lng: my_lng)
             pin_circle_array.append(Pin_circle_data(lat: latlng[0], lng: latlng[1], count: 1, purpose: Purpose_array[id], type: "pin", user_id: [id]))
         }
         pin_circle_array = Unite(pin_circle_array: pin_circle_array)
