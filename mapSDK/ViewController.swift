@@ -15,7 +15,7 @@ import GooglePlaces
 var timer_Foreground: Timer!
 var timer_Background: Timer!
 let TIME_INTERVAL = 0.2
-let MY_ID = 2
+let MY_ID = 0
 
 class ViewController: UIViewController, CLLocationManagerDelegate {    
     var t = 0.0 // アプリ起動時からの経過時間[s]

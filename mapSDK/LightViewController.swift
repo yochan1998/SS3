@@ -18,7 +18,9 @@ class LightViewController: ViewController {
     let lightImage = UIImage(named: "light2.png")
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        //super.viewDidLoad()
+        self.view.addSubview(mapView)
+        self.view.bringSubviewToFront(mapView)
         
         //ライトボタンの背景を白く
         lightButton.backgroundColor = UIColor.white
