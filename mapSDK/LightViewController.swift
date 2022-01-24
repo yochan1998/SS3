@@ -15,6 +15,7 @@ class LightViewController: ViewController {
     var beerSwitch: Bool = false
     var tradeSwitch: Bool = false
     let avDevice = AVCaptureDevice.default(for: AVMediaType.video)!
+    let lightImage = UIImage(named: "light2.png")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,9 @@ class LightViewController: ViewController {
         lightButton.backgroundColor = UIColor.white
         //ボタンの角を丸く
         lightButton.layer.cornerRadius = 10.0
+        lightButton.setImage(lightImage, for: .normal)
+        self.view.addSubview(lightButton)
+        self.view.bringSubviewToFront(lightButton)
     }
     
     //ライトボタンが押された時の処理
