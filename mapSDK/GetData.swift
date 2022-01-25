@@ -193,6 +193,19 @@ class GetData {
     }
 
     func Get_pin_circle_data(my_info : MyPosition, t: Double, my_id: Int) -> Array<Pin_circle_data>{
+        
+        // DBから取得(サンプルコード)
+        let db = Firestore.firestore()
+        db.collection("user").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                }
+            }
+        }
+ 
         // サンプルコード
         let my_lat = my_info.MyLat
         let my_lng = my_info.MyLng

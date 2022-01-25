@@ -35,6 +35,7 @@ class SetData {
     func Set_my_position(my_info: My_info){
         // my_positionに自分の位置情報を入れてサーバに送信する
         
+        // DBへ送信(サンプルコード)
         let db = Firestore.firestore()
         let time = getTime()
         let docData: [String: Any] = [
