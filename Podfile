@@ -12,6 +12,8 @@ target 'mapSDK' do
 
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
   pod 'Firebase/Database'
 
 end

@@ -12,6 +12,7 @@
 // ルートや設定を変更する場合80~89行目を編集してください
 
 import Foundation
+import Firebase
 
 struct Pin_circle_data{
     var lat: Double

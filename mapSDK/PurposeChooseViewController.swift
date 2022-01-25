@@ -93,11 +93,15 @@ class PurposeChooseViewController: ViewController {
         
         if beerSwitch == true && tradeSwitch == false{
             
+            //目的(ビール)をDBに反映
+            my_info.my_purpose = "beer"
             //ビールボタンだけ選択 → 探索モードへ移行し、飲み仲間探索
             self.performSegue(withIdentifier: "startSearch", sender: self)
             
         } else if beerSwitch == false && tradeSwitch == true {
             
+            //目的(交換)をDBに反映
+            my_info.my_purpose = "trade"
             //交換ボタンだけ選択 → 探索モードへ移行し、交換仲間探索
             self.performSegue(withIdentifier: "startSearch", sender: self)
             

@@ -9,7 +9,7 @@
 
 
 import UIKit
-import FirebaseDatabase
+import Firebase
 import GoogleMaps
 import GooglePlaces
 
@@ -17,13 +17,14 @@ var timer_Foreground: Timer!
 var timer_Background: Timer!
 let TIME_INTERVAL = 0.2
 let MY_ID = 0
+let deviceId = UIDevice.current.identifierForVendor!.uuidString
 
 class ViewController: UIViewController, CLLocationManagerDelegate {    
     var t = 0.0 // アプリ起動時からの経過時間[s]
     var markers_info = Markers_info()
     var input_info = GetData()
     var output_info = SetData()
-    var my_info = MyPosition()
+    var my_info = My_info(my_id: MY_ID)
     var locationManager = CLLocationManager()
     //var mapView: GMSMapView!
     var centerLocationSwitch: Bool = true
@@ -45,7 +46,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
         */
-        output_info.Set_my_position(lat: my_info.MyLat, lng: my_info.MyLng, my_id: 0) // 位置情報の送信
+        output_info.Set_my_position(my_info: my_info) // 位置情報の送信
         
         //カメラ座標変更(1度だけ)
         if mLat != nil {
@@ -93,16 +94,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.view.bringSubviewToFront(mapView)
         //print(mapView)
         
-        // Firebaseの共有インスタンスを取得
-        databaseRef = Database.database().reference()
-
-        // データ保存処理後のコールバック関数
-        let resultCallback = { (error: Error?, ref: DatabaseReference) -> () in
-            print(#function)
-        }
-
-        // データ保存
-        self.databaseRef.child("Root").childByAutoId().setValue("TestValue", withCompletionBlock: resultCallback)
         
         timer_Foreground = Timer.scheduledTimer(timeInterval: TIME_INTERVAL, target: self, selector: #selector(self.update_Foreground), userInfo: nil, repeats: true)
         timer_Foreground.fire()

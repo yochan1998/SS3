@@ -13,21 +13,44 @@
 //    丸拡大
 //    特徴更新
 
-struct My_position{
-    var lat: Double
-    var lng: Double
+import Firebase
+
+class My_info: MyPosition{
     var my_id: Int
-    init(lat: Double, lng: Double, my_id: Int) {
-        self.lat = lat;
-        self.lng = lng;
-        self.my_id = my_id;
+    var my_purpose: String
+    init(my_id: Int) {
+        self.my_id = my_id
+        self.my_purpose = "undefined"
     }
 }
 class SetData {
-    func Set_my_position(lat: Double, lng: Double, my_id: Int){
+    // 現在時刻を取得する関数getTime
+    func getTime () -> String {
+        let date = Date()
+        let df = DateFormatter()
+        df.dateFormat = "HH:mm:ss"
+        let string = df.string(from: date)
+        return string
+    }
+    func Set_my_position(my_info: My_info){
         // my_positionに自分の位置情報を入れてサーバに送信する
-        var my_position = My_position(lat: lat, lng: lng, my_id: my_id)
         
-        
+        let db = Firestore.firestore()
+        let time = getTime()
+        let docData: [String: Any] = [
+            "user_id" : my_info.my_id,
+            "lat" : my_info.MyLat,
+            "lng": my_info.MyLng,
+            "purpose" : my_info.my_purpose,
+            "time" : time
+        ]
+        // ユーザDBの更新
+        db.collection("user").document("\(my_info.my_id)").setData(docData) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
     }
 }
