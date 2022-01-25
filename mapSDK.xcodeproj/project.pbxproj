@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,8 @@
 		95100456278EACA5007F73AA /* MapDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95100455278EACA5007F73AA /* MapDesign.swift */; };
 		9510045E278EAEA0007F73AA /* GetMyPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510045D278EAEA0007F73AA /* GetMyPosition.swift */; };
 		9510047227901AF4007F73AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74652BD92790041D00754946 /* Main.storyboard */; };
+		95700032279FD2B3006B4A84 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 95700031279FD2B3006B4A84 /* FirebaseAnalytics */; };
+		95700048279FDD76006B4A84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95700047279FDD76006B4A84 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,7 @@
 		95100452278EAC9A007F73AA /* SetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SetData.swift; path = mapSDK/SetData.swift; sourceTree = "<group>"; };
 		95100455278EACA5007F73AA /* MapDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapDesign.swift; path = mapSDK/MapDesign.swift; sourceTree = "<group>"; };
 		9510045D278EAEA0007F73AA /* GetMyPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetMyPosition.swift; path = mapSDK/GetMyPosition.swift; sourceTree = "<group>"; };
+		95700047279FDD76006B4A84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B95ABEF66444E71CC225C0D4 /* Pods-mapSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mapSDK.release.xcconfig"; path = "Target Support Files/Pods-mapSDK/Pods-mapSDK.release.xcconfig"; sourceTree = "<group>"; };
 		F3760F9A249F2581BF66D8B6 /* Pods_mapSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mapSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -55,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95700032279FD2B3006B4A84 /* FirebaseAnalytics in Frameworks */,
 				487E78C312D851D96297A8D6 /* Pods_mapSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +69,7 @@
 		0B2223612766F3BA00B316AC = {
 			isa = PBXGroup;
 			children = (
+				95700047279FDD76006B4A84 /* GoogleService-Info.plist */,
 				9510045D278EAEA0007F73AA /* GetMyPosition.swift */,
 				95100455278EACA5007F73AA /* MapDesign.swift */,
 				95100452278EAC9A007F73AA /* SetData.swift */,
@@ -133,12 +138,16 @@
 				0B2223672766F3BA00B316AC /* Frameworks */,
 				0B2223682766F3BA00B316AC /* Resources */,
 				E4A0394D2AE9D55DA7698D4B /* [CP] Copy Pods Resources */,
+				FFB3A83C79B3602D9908C5B3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = mapSDK;
+			packageProductDependencies = (
+				95700031279FD2B3006B4A84 /* FirebaseAnalytics */,
+			);
 			productName = mapSDK;
 			productReference = 0B22236A2766F3BA00B316AC /* mapSDK.app */;
 			productType = "com.apple.product-type.application";
@@ -166,6 +175,9 @@
 				Base,
 			);
 			mainGroup = 0B2223612766F3BA00B316AC;
+			packageReferences = (
+				95700030279FD2B3006B4A84 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 0B22236B2766F3BA00B316AC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -186,6 +198,7 @@
 				74652BE02790044700754946 /* trade.png in Resources */,
 				0B22237A2766F3BC00B316AC /* LaunchScreen.storyboard in Resources */,
 				0B2223772766F3BC00B316AC /* Assets.xcassets in Resources */,
+				95700048279FDD76006B4A84 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +242,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFB3A83C79B3602D9908C5B3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mapSDK/Pods-mapSDK-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mapSDK/Pods-mapSDK-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mapSDK/Pods-mapSDK-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -445,6 +475,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		95700030279FD2B3006B4A84 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		95700031279FD2B3006B4A84 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95700030279FD2B3006B4A84 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0B2223622766F3BA00B316AC /* Project object */;
 }

@@ -9,6 +9,7 @@
 
 
 import UIKit
+import FirebaseDatabase
 import GoogleMaps
 import GooglePlaces
 
@@ -26,6 +27,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
     //var mapView: GMSMapView!
     var centerLocationSwitch: Bool = true
+    var databaseRef: DatabaseReference!
     func loop_Foreground(){
         // フォアグラウンドで一定間隔で実行する処理
         // my_id : ユーザのID
@@ -90,6 +92,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.view.addSubview(mapView)
         self.view.bringSubviewToFront(mapView)
         //print(mapView)
+        
+        // Firebaseの共有インスタンスを取得
+        databaseRef = Database.database().reference()
+
+        // データ保存処理後のコールバック関数
+        let resultCallback = { (error: Error?, ref: DatabaseReference) -> () in
+            print(#function)
+        }
+
+        // データ保存
+        self.databaseRef.child("Root").childByAutoId().setValue("TestValue", withCompletionBlock: resultCallback)
         
         timer_Foreground = Timer.scheduledTimer(timeInterval: TIME_INTERVAL, target: self, selector: #selector(self.update_Foreground), userInfo: nil, repeats: true)
         timer_Foreground.fire()
