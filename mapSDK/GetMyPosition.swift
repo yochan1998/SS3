@@ -16,22 +16,26 @@ class MyPosition{
     init() {
         // ここに自分の座標とカメラ座標の初期値を取得するコードを書く
         // サンプルコード
-        self.MyLat = 35.602712
-        self.MyLng = 139.683812
-        self.CameraLat = 35.602712
-        self.CameraLng = 139.683812
-        //self.MyLat = 35.703512
-        //self.MyLng = 139.753012
-        //self.CameraLat = 35.703512
-        //self.CameraLng = 139.753012
+        //self.MyLat = 35.602712
+        //self.MyLng = 139.683812
+        //self.CameraLat = 35.602712
+        //self.CameraLng = 139.683812
+        self.MyLat = 35.711966
+        self.MyLng = 139.568376
+        self.CameraLat = 35.711966
+        self.CameraLng = 139.568376
     }
     func Reload_Position() {
 
         if mLat != nil {
-            self.MyLat = 35.602712
-            self.MyLng = 139.683812
-            self.CameraLat = 35.602712
-            self.CameraLng = 139.683812
+            self.MyLat = 35.711966
+            self.MyLng = 139.568376
+            self.CameraLat = 35.711966
+            self.CameraLng = 139.568376
+            //self.MyLat = 35.602712
+            //self.MyLng = 139.683812
+            //self.CameraLat = 35.602712
+            //self.CameraLng = 139.683812
             //自分の座標の更新
             //self.MyLat = mLat
             //self.MyLng = mLng

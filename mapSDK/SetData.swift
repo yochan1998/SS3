@@ -46,12 +46,15 @@ class SetData {
             "time" : time
         ]
         // ユーザDBの更新
-        db.collection("user").document("\(my_info.my_id)").setData(docData) { err in
+        db.collection("users").document("\(my_info.my_id)").setData(docData) { err in
             if let err = err {
                 print("Error writing document: \(err)")
             } else {
                 print("Document successfully written!")
             }
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+            return
         }
     }
 }

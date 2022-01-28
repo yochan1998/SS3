@@ -94,6 +94,7 @@ class GetData {
     let Unite_dist = 20.0 // ピンの結合距離[m]
     let START_TIME = 20.0 // シミュレーション開始時刻[s]
     // -----
+    var pin_circle_array: Array<Pin_circle_data> = []
     
     func Randlat() ->Double{
         let randomDoublelat = Double.random(in: -0.0001...0.0001)
@@ -192,31 +193,48 @@ class GetData {
         return pin_circle_array_new
     }
 
-    func Get_pin_circle_data(my_info : MyPosition, t: Double, my_id: Int) -> Array<Pin_circle_data>{
+    func Get_pin_circle_dataA(my_info : MyPosition, t: Double, my_id: Int) {
         
         // DBから取得(サンプルコード)
+        //self.pin_circle_array.removeAll()
         let db = Firestore.firestore()
-        db.collection("user").getDocuments() { (querySnapshot, err) in
+        db.collection("markers").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
+                    //print("\(document.documentID) => \(document.data())")
+                    let pin_circle = document.data()
+                    let lat: Double = pin_circle["lat"] as! Double
+                    let lng: Double = pin_circle["lng"] as! Double
+                    let count: Int = pin_circle["count"] as! Int
+                    let purpose: String = pin_circle["purpose"] as! String
+                    let type: String = pin_circle["type"] as! String
+                    let user_id_array: Array<Int> = pin_circle["user_id"] as! Array<Int>
+                    let user_id_set = Set(user_id_array)
+                    if purpose != "undefined"{
+                        self.pin_circle_array.append(Pin_circle_data(lat: lat, lng: lng, count: count, purpose: purpose, type: type, user_id: user_id_set))
+                    }
                 }
             }
         }
- 
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+            return
+        }
+        
         // サンプルコード
-        let my_lat = my_info.MyLat
-        let my_lng = my_info.MyLng
+        //let my_lat = my_info.MyLat
+        //let my_lng = my_info.MyLng
         // pin_circle_arrayにDBから取得したピン,丸の情報を入れる
         // my_lat, my_lng周辺の情報に限定する？
-        var pin_circle_array: Array<Pin_circle_data> = []
+        //var pin_circle_array: Array<Pin_circle_data> = []
+        /*
         for id in 0..<N{
             let latlng = Pos_simulate(t: t, id: id, my_id: my_id, my_lat: my_lat, my_lng: my_lng)
             pin_circle_array.append(Pin_circle_data(lat: latlng[0], lng: latlng[1], count: 1, purpose: Purpose_array[id], type: "pin", user_id: [id]))
         }
-        pin_circle_array = Unite(pin_circle_array: pin_circle_array)
+        */
+        //pin_circle_array = Unite(pin_circle_array: pin_circle_array)
         /*
         pin_circle_array.append(Pin_circle_data(lat: my_lat, lng: my_lng, count: 1, purpose: "beer", type: "pin", user_id: [0]))
         pin_circle_array.append(Pin_circle_data(lat: my_lat + 0.0010 + Randlat(), lng: my_lng + 0.0016 + Randlng(), count: 1, purpose: "trade", type: "pin", user_id: [1]))
@@ -232,6 +250,10 @@ class GetData {
         pin_circle_array.append(Pin_circle_data(lat: my_lat + 0.0011 + Randlat(), lng: my_lng - 0.0009 + Randlng(), count: 1, purpose: "trade", type: "circle", user_id: [15]))
         pin_circle_array.append(Pin_circle_data(lat: my_lat + 0.0013 + Randlat(), lng: my_lng - 0.0015 + Randlng(), count: 4, purpose: "beer", type: "circle", user_id: [16,17,18,19]))
          */
-        return pin_circle_array
+        //return pin_circle_array
+    }
+    func Get_pin_circle_data(my_info : MyPosition, t: Double, my_id: Int) -> Array<Pin_circle_data>{
+        self.Get_pin_circle_dataA(my_info : my_info, t: t, my_id: my_id)
+        return self.pin_circle_array
     }
 }

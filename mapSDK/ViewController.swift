@@ -15,7 +15,7 @@ import GooglePlaces
 
 var timer_Foreground: Timer!
 var timer_Background: Timer!
-let TIME_INTERVAL = 0.2
+let TIME_INTERVAL = 2.0
 let MY_ID = 0
 let deviceId = UIDevice.current.identifierForVendor!.uuidString
 
@@ -28,7 +28,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
     //var mapView: GMSMapView!
     var centerLocationSwitch: Bool = true
-    var databaseRef: DatabaseReference!
+    //var databaseRef: DatabaseReference!
     func loop_Foreground(){
         // フォアグラウンドで一定間隔で実行する処理
         // my_id : ユーザのID
