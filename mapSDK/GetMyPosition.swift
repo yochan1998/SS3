@@ -28,17 +28,17 @@ class MyPosition{
     func Reload_Position() {
 
         if mLat != nil {
-            self.MyLat = 35.711966
-            self.MyLng = 139.568376
-            self.CameraLat = 35.711966
-            self.CameraLng = 139.568376
+            //self.MyLat = 35.711966
+            //self.MyLng = 139.568376
+            //self.CameraLat = 35.711966
+            //self.CameraLng = 139.568376
             //self.MyLat = 35.602712
             //self.MyLng = 139.683812
             //self.CameraLat = 35.602712
             //self.CameraLng = 139.683812
             //自分の座標の更新
-            //self.MyLat = mLat
-            //self.MyLng = mLng
+            self.MyLat = mLat
+            self.MyLng = mLng
 
             // カメラ座標の更新
             //self.CameraLat = mLat

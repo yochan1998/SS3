@@ -15,7 +15,8 @@ import GooglePlaces
 
 var timer_Foreground: Timer!
 var timer_Background: Timer!
-let TIME_INTERVAL = 2.0
+let TIME_INTERVAL = 0.1
+let loop_DB = 20 // 0.1*20=2[s]
 let MY_ID = 0
 let deviceId = UIDevice.current.identifierForVendor!.uuidString
 
@@ -28,11 +29,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
     //var mapView: GMSMapView!
     var centerLocationSwitch: Bool = true
+    var loopCount = 0
+    var pin_circle_array: Array<Pin_circle_data> = []
     //var databaseRef: DatabaseReference!
     func loop_Foreground(){
         // フォアグラウンドで一定間隔で実行する処理
         // my_id : ユーザのID
-        let pin_circle_array = input_info.Get_pin_circle_data(my_info: my_info, t: t, my_id: MY_ID) // ピン,丸情報の受信
+        if(loopCount % 20) == 0{
+            pin_circle_array = input_info.Get_pin_circle_data(my_info: my_info, t: t, my_id: MY_ID) // ピン,丸情報の受信
+        }
         my_info.Reload_Position() // 位置情報の更新
         markers_info.Reload_marker(pin_circle_array: pin_circle_array, my_id: MY_ID) // 画面表示
         /*
@@ -46,7 +51,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
         */
-        output_info.Set_my_position(my_info: my_info) // 位置情報の送信
+        if(loopCount % 20) == 0 {
+            output_info.Set_my_position(my_info: my_info) // 位置情報の送信
+        }
         
         //カメラ座標変更(1度だけ)
         if mLat != nil {
@@ -58,6 +65,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
         t += TIME_INTERVAL
+        loopCount += 1
     }
     
     // バックグラウンドで一定間隔で実行する処理

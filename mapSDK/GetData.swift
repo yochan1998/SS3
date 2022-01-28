@@ -196,12 +196,12 @@ class GetData {
     func Get_pin_circle_dataA(my_info : MyPosition, t: Double, my_id: Int) {
         
         // DBから取得(サンプルコード)
-        //self.pin_circle_array.removeAll()
         let db = Firestore.firestore()
         db.collection("markers").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
+                self.pin_circle_array.removeAll()
                 for document in querySnapshot!.documents {
                     //print("\(document.documentID) => \(document.data())")
                     let pin_circle = document.data()
@@ -216,10 +216,8 @@ class GetData {
                         self.pin_circle_array.append(Pin_circle_data(lat: lat, lng: lng, count: count, purpose: purpose, type: type, user_id: user_id_set))
                     }
                 }
+                return
             }
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-            return
         }
         
         // サンプルコード

@@ -52,8 +52,6 @@ class SetData {
             } else {
                 print("Document successfully written!")
             }
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
             return
         }
     }
