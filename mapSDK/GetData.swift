@@ -197,29 +197,35 @@ class GetData {
         
         // DBから取得(サンプルコード)
         let db = Firestore.firestore()
-        db.collection("markers").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                self.pin_circle_array.removeAll()
-                for document in querySnapshot!.documents {
-                    //print("\(document.documentID) => \(document.data())")
-                    let pin_circle = document.data()
-                    let lat: Double = pin_circle["lat"] as! Double
-                    let lng: Double = pin_circle["lng"] as! Double
-                    let count: Int = pin_circle["count"] as! Int
-                    let purpose: String = pin_circle["purpose"] as! String
-                    let type: String = pin_circle["type"] as! String
-                    let user_id_array: Array<Int> = pin_circle["user_id"] as! Array<Int>
-                    let user_id_set = Set(user_id_array)
-                    if purpose != "undefined"{
+        Firestore.firestore().collection("DBinfo").document("DBswitch").getDocument { (snap, error) in
+            if let error = error {
+                fatalError("\(error)")
+            }
+            guard let data = snap?.data() else { return }
+            print(data)
+            let DBswitch: String = data["active"] as! String
+            db.collection("markers"+DBswitch).getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    self.pin_circle_array.removeAll()
+                    for document in querySnapshot!.documents {
+                        //print("\(document.documentID) => \(document.data())")
+                        let pin_circle = document.data()
+                        let lat: Double = pin_circle["lat"] as! Double
+                        let lng: Double = pin_circle["lng"] as! Double
+                        print(lng)
+                        let count: Int = pin_circle["count"] as! Int
+                        let purpose: String = pin_circle["purpose"] as! String
+                        let type: String = pin_circle["type"] as! String
+                        let user_id_array: Array<Int> = pin_circle["user_id"] as! Array<Int>
+                        let user_id_set = Set(user_id_array)
                         self.pin_circle_array.append(Pin_circle_data(lat: lat, lng: lng, count: count, purpose: purpose, type: type, user_id: user_id_set))
                     }
+                    return
                 }
-                return
             }
         }
-        
         // サンプルコード
         //let my_lat = my_info.MyLat
         //let my_lng = my_info.MyLng

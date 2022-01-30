@@ -18,10 +18,16 @@ class LightViewController: ViewController {
     let lightImage = UIImage(named: "light2.png")
     
     override func viewDidLoad() {
-        //super.viewDidLoad()
+        super.viewDidLoad()
         self.view.addSubview(mapView)
         self.view.bringSubviewToFront(mapView)
-        
+        my_info.my_purpose = UserDefaults.standard.string(forKey: "purpose") ?? "undefined"
+        if my_info.my_purpose == "beer"{
+            markers_info.is_active_purpose = [true,false,false]
+        }
+        if my_info.my_purpose == "trade"{
+            markers_info.is_active_purpose = [false,true,false]
+        }
         //ライトボタンの背景を白く
         lightButton.backgroundColor = UIColor.white
         //ボタンの角を丸く

@@ -20,8 +20,8 @@ class MyPosition{
         //self.MyLng = 139.683812
         //self.CameraLat = 35.602712
         //self.CameraLng = 139.683812
-        self.MyLat = 35.711966
-        self.MyLng = 139.568376
+        self.MyLat = 0.0
+        self.MyLng = 0.0
         self.CameraLat = 35.711966
         self.CameraLng = 139.568376
     }

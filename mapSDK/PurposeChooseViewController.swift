@@ -22,6 +22,7 @@ class PurposeChooseViewController: ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        my_info.my_purpose = "undefined"
         
         //最初のボタンの背景色を白に設定
         beerButton.backgroundColor = UIColor.white
@@ -95,6 +96,7 @@ class PurposeChooseViewController: ViewController {
             
             //目的(ビール)をDBに反映
             my_info.my_purpose = "beer"
+            UserDefaults.standard.set("beer", forKey: "purpose")
             //ビールボタンだけ選択 → 探索モードへ移行し、飲み仲間探索
             self.performSegue(withIdentifier: "startSearch", sender: self)
             
@@ -102,6 +104,7 @@ class PurposeChooseViewController: ViewController {
             
             //目的(交換)をDBに反映
             my_info.my_purpose = "trade"
+            UserDefaults.standard.set("trade", forKey: "purpose")
             //交換ボタンだけ選択 → 探索モードへ移行し、交換仲間探索
             self.performSegue(withIdentifier: "startSearch", sender: self)
             
