@@ -16,7 +16,7 @@ import GooglePlaces
 var timer_Foreground: Timer!
 var timer_Background: Timer!
 let TIME_INTERVAL = 0.1
-let loop_DB = 20 // 0.1*20=2[s]
+let loop_DB = 10 // 0.1*10=1[s]
 let MY_ID = 0
 let deviceId = UIDevice.current.identifierForVendor!.uuidString
 
